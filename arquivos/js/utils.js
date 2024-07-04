@@ -11,31 +11,43 @@ function spriteConverter(imgArray){
 
 function generateObstacles(){
 	timer = setInterval(() => {
-		const random = Math.floor(Math.random() * 2)
+		const topObstacle = Math.floor(Math.random() * (320 - 50)) + 50
+		const emptySpace = Math.floor(Math.random() * (180 - 150)) + 150
 
-		if(random == 1){
-			obstaclesArray.push(new Obstacle({
-				color: 'green',
-				width: 100,
-				height: Math.floor(Math.random() * (300 - 200)) + 200,
-				position: {
-					x: innerWidth,
-					y: 0
-				}
-			}))
-		}else if(random == 0){
-			obstaclesArray.push(new Obstacle({
-				color: 'green',
-				width: 100,
-				height: Math.floor(Math.random() * (300 - 200)) + 200,
-				position: {
-					x: innerWidth,
-					y: canvas.height
-				},
-				side: 'bottom'
-			}))
-		}
-	}, 1500)
+		obstaclesArray.push(new Obstacle({
+			color: 'green',
+			width: 80,
+			height: topObstacle,
+			position: {
+				x: innerWidth,
+				y: 0
+			},
+			collision: true
+		}))
+
+		obstaclesArray.push(new Obstacle({
+			color: 'transparent',
+			width: 80,
+			height: emptySpace,
+			position: {
+				x: innerWidth,
+				y: topObstacle
+			},
+			collision: false
+		}))
+
+		obstaclesArray.push(new Obstacle({
+			color: 'green',
+			width: 80,
+			height: 500,
+			position: {
+				x: innerWidth,
+				y: topObstacle + emptySpace
+			},
+			collision: true
+		}))
+		
+	}, 1100)
 }
 
 const getAngle = angle => Math.abs(player.angle) * Math.PI / 180 >= angle * Math.PI / 180

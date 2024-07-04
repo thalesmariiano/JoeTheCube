@@ -1,18 +1,14 @@
 
 class Obstacle {
-	constructor({color, width, height, position, side}){
+	constructor({color, width, height, position, collision}){
 		this.color = color
 		this.width = width
 		this.height = height
 		this.position = position
+		this.collision = collision
 		this.velocity = {
 			x: 0,
 			y: 0
-		}
-		this.side = side
-
-		if(this.side == 'bottom'){
-			this.position.y -= this.height			
 		}
 	}
 

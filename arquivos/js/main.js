@@ -71,16 +71,18 @@ function render(){
 	
 	ctx.restore()
 
-	obstaclesArray.forEach(ob => {
-		ob.update()
+	obstaclesArray.forEach(obs => {
+		obs.update()
 
-		if(player.position.x + player.width >= ob.position.x && 
-	    ob.position.x + ob.width >= player.position.x &&
-	    player.position.y + player.height >= ob.position.y &&
-	    ob.position.y + ob.height >= player.position.y){
-			player.sprite = joeSprites[2].sprite
-			player.isDead = true
-	    }
+		if(obs.collision){
+			if(player.position.x + player.width >= obs.position.x && obs.position.x + obs.width >= player.position.x &&
+		   	player.position.y + player.height >= obs.position.y && obs.position.y + obs.height >= player.position.y)
+			{
+				player.sprite = joeSprites[2].sprite
+				player.isDead = true
+		    }
+		}
+		
 
 	})
 

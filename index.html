@@ -25,9 +25,9 @@
 						<h1 class="font-bold text-white text-6xl"><span class="text-red-700">Joe</span> The Cube</h1>
 
 						<div class="flex flex-col justify-center items-center gap-3">
-							<button onClick="init()" class="w-52 py-1.5 text-black font-semibold bg-neutral-300 hover:bg-neutral-100 transition-all">Singleplayer</button>
+							<button id="startSinglePlayer" class="w-52 py-1.5 text-black font-semibold bg-neutral-300 hover:bg-neutral-100 transition-all">Singleplayer</button>
 							<button class="w-52 py-1.5 text-black font-semibold bg-neutral-300/50 cursor-not-allowed">Multiplayer</button>
-							<button class="w-52 py-1.5 text-black font-semibold bg-neutral-300 hover:bg-neutral-100 transition-all">Options</button>
+							<button id="options" class="w-52 py-1.5 text-black font-semibold bg-neutral-300 hover:bg-neutral-100 transition-all">Options</button>
 						</div>
 					</div>
 
@@ -36,7 +36,7 @@
 							<p class="text-white mb-2">Joe</p>
 							<img class="w-14 h-14" src="arquivos/images//cubeJoe_128x.png">
 						</div>
-						<button class="px-5 py-0.5 font-semibold bg-neutral-300 hover:bg-neutral-100 transition-all">Skins</button>
+						<button id="skins" class="px-5 py-0.5 font-semibold bg-neutral-300 hover:bg-neutral-100 transition-all">Skins</button>
 					</div>
 
 				</div>
@@ -47,8 +47,8 @@
 					<h1 class="font-bold text-white text-5xl">You Lose!</h1>
 
 					<div class="flex flex-col justify-center items-center gap-3">
-						<button onClick="restart()" class="w-52 py-1.5 text-black font-semibold bg-neutral-300 hover:bg-neutral-100 transition-all">Restart</button>
-						<button onClick="backToMenu()" class="w-52 py-1.5 text-black font-semibold bg-neutral-300 hover:bg-neutral-100 transition-all">Menu</button>
+						<button id="restartSinglePlayer" class="w-52 py-1.5 text-black font-semibold bg-neutral-300 hover:bg-neutral-100 transition-all">Restart</button>
+						<button id="exitFromSinglePlayer" class="w-52 py-1.5 text-black font-semibold bg-neutral-300 hover:bg-neutral-100 transition-all">Menu</button>
 					</div>
 				</div>
 			</div>
@@ -58,6 +58,7 @@
 
 	<script src="./arquivos/js/Classes/Obstacle.js"></script>
 	<script src="./arquivos/js/Classes/Player.js"></script>
+	<script src="./arquivos/js/uiEvents.js"></script>
 	<script src="./arquivos/js/keyMap.js"></script>
 	<script src="./arquivos/js/utils.js"></script>
 	<script src="./arquivos/js/main.js"></script>

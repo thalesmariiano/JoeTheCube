@@ -1,0 +1,24 @@
+{
+  "name": "joe-the-cube",
+  "version": "1.0.0",
+  "description": "A flappy bird like game.",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "npx tailwindcss -i ./input.css -o ./arquivos/css/style.css",
+    "minify-css": "npx tailwindcss -o ./arquivos/css/style.css --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thalesmariiano/JoeTheCube.git"
+  },
+  "author": "Thales Mariano",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thalesmariiano/JoeTheCube/issues"
+  },
+  "homepage": "https://github.com/thalesmariiano/JoeTheCube#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "tailwindcss": "^3.4.4"
+  }
+}

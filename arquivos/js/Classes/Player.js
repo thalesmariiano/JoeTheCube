@@ -12,6 +12,7 @@ class Player {
 		}
 		this.sprite = {}
 		this.angle = 0
+		this.points = 0
 		this.isDead = false
 	}
 

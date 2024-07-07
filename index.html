@@ -10,7 +10,7 @@
 
 	<link rel="stylesheet" type="text/css" href="./arquivos/css/style.css">
 
-	<!-- <script src="https://cdn.tailwindcss.com"></script> -->
+	<script src="https://cdn.tailwindcss.com"></script>
 
 	<title>Joe The Cube</title>
 </head>
@@ -48,9 +48,19 @@
 				</div>
 			</div>
 
+			<div id="hud-screen" class="w-full absolute top-0 left-0 p-5 hidden">
+				<span id="player_hud_score" class="font-semibold text-white bg-neutral-700 px-2 select-none rounded">Score: 0</span>	
+			</div>
+
+
 			<div id="gameOver-Screen" class="w-full h-full absolute top-0 left-0 bg-neutral-900/50 flex justify-center items-center hidden">
-				<div class="flex flex-col gap-10">
+				<div class="flex flex-col gap-5">
 					<h1 class="font-bold text-white text-5xl">You Lose!</h1>
+
+					<div>
+						<p class="font-semibold text-center text-white">Score: 0</p>
+						<p class="font-semibold text-center text-white">Record: 0</p>
+					</div>
 
 					<div class="flex flex-col justify-center items-center gap-3">
 						<button id="restartSinglePlayer" class="w-52 py-1.5 text-black font-semibold bg-neutral-300 hover:bg-neutral-100 transition-all rounded-lg">Restart</button>

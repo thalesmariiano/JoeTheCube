@@ -9,6 +9,8 @@ ctx.imageSmoothingEnabled = false
 canvas.width = innerWidth
 canvas.height = 500
 
+const death_sound = new Audio('./arquivos/sounds/death_sound.wav')
+
 var timer = 0
 const GRAVITY = 0.2
 var gameOver = false
@@ -60,6 +62,7 @@ function render(){
 			{
 				player.switchSprite('hit')
 				player.isDead = true
+				death_sound.play()
 		    }
 		}
 		

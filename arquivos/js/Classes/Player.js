@@ -58,6 +58,7 @@ class Player {
 			this.switchSprite('hit')
 			this.velocity.y = 0
 			this.isDead = true
+			death_sound.play()
 		}
 
 		this.velocity.y += GRAVITY

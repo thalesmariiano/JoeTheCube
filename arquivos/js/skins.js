@@ -27,4 +27,18 @@ const JTC_skins = {
 			image: 'arquivos/images/sprites/mei/cubeMei_hit.png'
 		}	
 	],
+	cleber: [
+		{	
+			name: 'looking_forward',
+			image: 'arquivos/images/sprites/cleber/cubeCleber.png'
+		},
+		{
+			name: 'looking_back',
+			image: 'arquivos/images/sprites/cleber/cubeCleber_lookingBack.png'
+		},
+		{
+			name: 'hit',
+			image: 'arquivos/images/sprites/cleber/cubeCleber_hit.png'
+		}	
+	],
 }

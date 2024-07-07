@@ -1,7 +1,7 @@
 
 class Player {
-	constructor({sprite, color, width, height, position}){
-		this.sprite = sprite
+	constructor({sprites, color, width, height, position}){
+		this.sprites = sprites
 		this.color = color
 		this.width = width
 		this.height = height
@@ -10,18 +10,22 @@ class Player {
 			x: 0,
 			y: 0
 		}
+		this.sprite = {}
 		this.angle = 0
 		this.isDead = false
+	}
+
+	switchSprite(spriteName){
+		this.sprite = this.sprites.find(s => s.name === spriteName)
 	}
 
 	draw(){
 		if(this.sprite){
 			ctx.drawImage(
-			this.sprite, 
-			0, 
-			0, 
-			this.sprite.width, 
-			this.sprite.width, 
+			this.sprite.image, 
+			0, 0, 
+			this.sprite.image.width, 
+			this.sprite.image.height, 
 			this.position.x, 
 			this.position.y, 
 			this.width, 
@@ -47,7 +51,7 @@ class Player {
 		}
 
 		if(this.position.y + this.height > canvas.height){
-			this.sprite = joeSprites[2].sprite
+			this.switchSprite('hit')
 			this.velocity.y = 0
 			this.isDead = true
 		}

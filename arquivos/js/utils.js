@@ -3,8 +3,8 @@ function spriteConverter(imgArray){
 	if(Array.isArray(imgArray)){
 		imgArray.forEach(spr => {
 			const img = new Image()
-			img.src = spr.sprite
-			spr.sprite = img
+			img.src = spr.image
+			spr.image = img
 		})
 	}
 }

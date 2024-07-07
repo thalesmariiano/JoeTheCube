@@ -13,27 +13,15 @@ var timer = 0
 const GRAVITY = 0.2
 var gameOver = false
 
+if(!localStorage.getItem('JTC-skin')){
+	localStorage.setItem('JTC-skin', 'joe')
+}
+spriteConverter(JTC_skins[localStorage.getItem('JTC-skin')])
+
 const obstaclesArray = []
 
-const joeSprites = [
-	{	
-		name: 'looking_forward',
-		sprite: 'arquivos/images/sprites/joe/cubeJoe.png'
-	},
-	{
-		name: 'looking_back',
-		sprite: 'arquivos/images/sprites/joe/cubeJoe_lookingBack.png'
-	},
-	{
-		name: 'hit',
-		sprite: 'arquivos/images/sprites/joe/cubeJoe_hit.png'
-	}
-]
-
-spriteConverter(joeSprites)
-
 const player = new Player({
-	sprite: joeSprites[0].sprite,
+	sprites: JTC_skins[localStorage.getItem('JTC-skin')],
 	color: 'red',
 	width: 50,
 	height: 50,
@@ -62,11 +50,8 @@ function render(){
 	}
 
 	if(!player.isDead){
-		if(getAngle(90)){
-			player.sprite = joeSprites[1].sprite
-		}else{
-			player.sprite = joeSprites[0].sprite
-		}
+		if(!getAngle(90)) player.switchSprite('looking_forward')	
+		else player.switchSprite('looking_back')
 	}
 	
 	ctx.restore()
@@ -78,7 +63,7 @@ function render(){
 			if(player.position.x + player.width >= obs.position.x && obs.position.x + obs.width >= player.position.x &&
 		   	player.position.y + player.height >= obs.position.y && obs.position.y + obs.height >= player.position.y)
 			{
-				player.sprite = joeSprites[2].sprite
+				player.switchSprite('hit')
 				player.isDead = true
 		    }
 		}
@@ -109,7 +94,7 @@ function init(){
 
 	player.position.y = 250
 	player.angle = 0
-	joeSprites[0].sprite
+	player.switchSprite('looking_forward')
 	obstaclesArray.length = 0
 	gameOverScreen.classList.add('hidden')
 	gameOver = false
@@ -123,7 +108,7 @@ function restart(){
 
 	player.position.y = 250
 	player.angle = 0
-	joeSprites[0].sprite
+	player.switchSprite('looking_forward')
 	obstaclesArray.length = 0
 	gameOverScreen.classList.add('hidden')
 	gameOver = false

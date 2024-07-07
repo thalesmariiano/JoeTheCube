@@ -33,8 +33,8 @@
 
 					<div class="w-24 flex flex-col gap-4 justify-center items-center absolute top-24 right-32">
 						<div class="text-center">
-							<p class="text-white mb-2">Joe</p>
-							<img class="w-14 h-14" src="arquivos/images//cubeJoe_128x.png">
+							<p id="skin_name" class="text-white mb-2 capitalize">Joe</p>
+							<img id="skin_display" class="w-14 h-14" src="arquivos/images//cubeJoe_128x.png">
 						</div>
 						<div class="w-full text-center space-y-1">
 							<button id="skins_button" class="w-16 py-0.5 font-semibold bg-neutral-300 hover:bg-neutral-100 transition-all">Skins</button>
@@ -88,12 +88,23 @@
 		</div>
 	</div>
 
+	<script src="./arquivos/js/utils.js"></script>
+	<script src="./arquivos/js/skins.js"></script>
+	<script>
+		if(!localStorage.getItem('JTC-skin')){
+			localStorage.setItem('JTC-skin', 'joe')
+		}
+		spriteConverter(JTC_skins['joe'])
+		spriteConverter(JTC_skins['mei'])
+
+		configSkinDisplay()
+
+	</script>
+
 	<script src="./arquivos/js/Classes/Obstacle.js"></script>
 	<script src="./arquivos/js/Classes/Player.js"></script>
-	<script src="./arquivos/js/skins.js"></script>
 	<script src="./arquivos/js/uiEvents.js"></script>
 	<script src="./arquivos/js/keyMap.js"></script>
-	<script src="./arquivos/js/utils.js"></script>
 	<script src="./arquivos/js/main.js"></script>
 </body>
 </html>

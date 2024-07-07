@@ -19,6 +19,10 @@ class Player {
 		this.sprite = this.sprites.find(s => s.name === spriteName)
 	}
 
+	setSkin(skins){
+		this.sprites = skins
+	}
+
 	draw(){
 		if(this.sprite){
 			ctx.drawImage(

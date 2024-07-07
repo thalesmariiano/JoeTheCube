@@ -13,11 +13,6 @@ var timer = 0
 const GRAVITY = 0.2
 var gameOver = false
 
-if(!localStorage.getItem('JTC-skin')){
-	localStorage.setItem('JTC-skin', 'joe')
-}
-spriteConverter(JTC_skins[localStorage.getItem('JTC-skin')])
-
 const obstaclesArray = []
 
 const player = new Player({

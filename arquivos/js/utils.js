@@ -51,3 +51,18 @@ function generateObstacles(){
 }
 
 const getAngle = angle => Math.abs(player.angle) * Math.PI / 180 >= angle * Math.PI / 180
+
+function configSkinDisplay(){
+	const skin_name = document.querySelector('#skin_name')
+	const skin_display = document.querySelector('#skin_display')
+	const skinName = localStorage.getItem('JTC-skin')
+
+	skin_name.innerHTML = skinName
+	skin_display.src = `
+					./arquivos/images/cube
+					${skinName.split('')[0].toUpperCase()}
+					${skinName.split('')[1]}
+					${skinName.split('')[2]}
+					_128x.png`
+
+}

@@ -28,7 +28,7 @@ select_skin.forEach(skinBtn => {
 	skinBtn.addEventListener('click', () => {
 		const skin = skinBtn.dataset.skin
 		localStorage.setItem('JTC-skin', skin)
-		player.setSkin(JTC_skins[skin])
+		player.setSkin(JTC_skins[skin.toLowerCase()])
 		configSkinDisplay(skin_name, skin_display)
 	})
 	

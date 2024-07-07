@@ -16,7 +16,7 @@ var gameOver = false
 const obstaclesArray = []
 
 const player = new Player({
-	sprites: JTC_skins[localStorage.getItem('JTC-skin')],
+	sprites: JTC_skins[localStorage.getItem('JTC-skin').toLowerCase()],
 	color: 'red',
 	width: 50,
 	height: 50,

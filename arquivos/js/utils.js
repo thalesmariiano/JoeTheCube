@@ -58,11 +58,6 @@ function configSkinDisplay(){
 	const skinName = localStorage.getItem('JTC-skin')
 
 	skin_name.innerHTML = skinName
-	skin_display.src = `
-					./arquivos/images/cube
-					${skinName.split('')[0].toUpperCase()}
-					${skinName.split('')[1]}
-					${skinName.split('')[2]}
-					_128x.png`
+	skin_display.src = `./arquivos/images/cube${skinName}_128x.png`
 
 }

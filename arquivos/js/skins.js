@@ -41,4 +41,18 @@ const JTC_skins = {
 			image: 'arquivos/images/sprites/cleber/cubeCleber_hit.png'
 		}	
 	],
+	koorb: [
+		{
+			name: 'looking_forward',
+			image: 'arquivos/images/sprites/koorb/cubeKoorb.png'
+		},
+		{
+			name: 'looking_back',
+			image: 'arquivos/images/sprites/koorb/cubeKoorb.png'
+		},
+		{
+			name: 'hit',
+			image: 'arquivos/images/sprites/koorb/cubeKoorb_hit.png'
+		}	
+	]
 }

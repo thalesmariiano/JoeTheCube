@@ -22,7 +22,7 @@ function generateObstacles(){
 				x: innerWidth,
 				y: 0
 			},
-			collision: true
+			canCollide: true
 		}))
 
 		obstaclesArray.push(new Obstacle({
@@ -33,7 +33,7 @@ function generateObstacles(){
 				x: innerWidth,
 				y: topObstacle
 			},
-			collision: false
+			canCollide: false
 		}))
 
 		obstaclesArray.push(new Obstacle({
@@ -44,7 +44,7 @@ function generateObstacles(){
 				x: innerWidth,
 				y: topObstacle + emptySpace
 			},
-			collision: true
+			canCollide: true
 		}))
 		
 	}, 1100)
@@ -60,4 +60,16 @@ function configSkinDisplay(){
 	skin_name.innerHTML = skinName
 	skin_display.src = `./arquivos/images/cube${skinName}_128x.png`
 
+}
+
+function collider(collider, object, callback){
+	var collided = false
+
+	if(collider.position.x + collider.width >= object.position.x &&
+	object.position.x + object.width >= collider.position.x &&
+	collider.position.y + collider.height >= object.position.y &&
+	object.position.y + object.height >= collider.position.y) collided = true
+	else collided = false
+	
+	callback(collided)
 }

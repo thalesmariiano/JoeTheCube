@@ -1,11 +1,11 @@
 
 class Obstacle {
-	constructor({color, width, height, position, collision}){
+	constructor({color, width, height, position, canCollide}){
 		this.color = color
 		this.width = width
 		this.height = height
 		this.position = position
-		this.collision = collision
+		this.canCollide = canCollide
 		this.velocity = {
 			x: -5,
 			y: 0

@@ -59,37 +59,33 @@ function render(){
 	obstaclesArray.forEach(obs => {
 		obs.update()
 
-		if(obs.collision){
-			if(player.position.x + player.width >= obs.position.x && obs.position.x + obs.width >= player.position.x &&
-		   	player.position.y + player.height >= obs.position.y && obs.position.y + obs.height >= player.position.y)
-			{
-				player.switchSprite('hit')
-				player.isDead = true
-				death_sound.play()
-		    }
-		}else{
-			if(player.position.x + player.width >= obs.position.x && obs.position.x + obs.width >= player.position.x &&
-		   	player.position.y + player.height >= obs.position.y && obs.position.y + obs.height >= player.position.y)
-			{
-				if(!obs.collided){
-					obs.collided = true
-					player.points++
-
-					player_hud_score.innerHTML = 'Score: ' + player.points
-
-					if(player.points % 5 === 0){
-						pass_obstacle_sound.play()
-					}
-					console.log(player.points)
+		if(obs.canCollide){
+			collider(player, obs, (collision) => {
+				if(collision){
+					player.switchSprite('hit')
+					player.isDead = true
+					death_sound.play()
 				}
-			}else{
+			})	
+		}else{
+			collider(player, obs, (collision) => {
+				if(collision){
+					if(!obs.collided){
+						obs.collided = true
+						player.points++
+
+						player_hud_score.innerHTML = 'Score: ' + player.points
+
+						if(player.points % 5 === 0){
+							pass_obstacle_sound.play()
+						}
+					}
+					return
+				}
 				obs.collided = false
-			}
+			})
 		}
-		
-
 	})
-
 }
 
 function loop(){

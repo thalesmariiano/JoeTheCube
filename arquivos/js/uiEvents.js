@@ -27,9 +27,19 @@ close_skins_modal.addEventListener('click', () => {
 select_skin.forEach(skinBtn => {
 	skinBtn.addEventListener('click', () => {
 		const skin = skinBtn.dataset.skin
+		const prevSkinBtn = Array(...select_skin).find(btn => btn.classList.contains("skin-container-active"))
+
+		if(prevSkinBtn){
+			prevSkinBtn.classList.add('skin-container')
+			prevSkinBtn.classList.remove('skin-container-active')
+		}
+		
+		skinBtn.classList.remove('skin-container')
+		skinBtn.classList.add('skin-container-active')
+
 		localStorage.setItem('JTC-skin', skin)
 		player.setSkin(JTC_skins[skin.toLowerCase()])
-		configSkinDisplay(skin_name, skin_display)
+		configSkinDisplay()
 	})
 	
 })

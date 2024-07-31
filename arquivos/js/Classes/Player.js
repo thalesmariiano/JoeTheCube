@@ -48,6 +48,14 @@ class Player {
 		
 	}
 
+	restart(){
+		player.switchSprite('looking_forward')
+		player.position.y = 250
+		player.angle = 0
+		player.isDead = false
+		player.points = 0
+	}
+
 	update(){
 		this.draw()
 

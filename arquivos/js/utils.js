@@ -73,3 +73,10 @@ function collider(collider, object, callback){
 	
 	callback(collided)
 }
+
+function restartGame(){
+	gameOver = false
+	player.restart()
+	obstaclesArray.length = 0
+	player_hud_score.innerHTML = 'Score: 0'
+}

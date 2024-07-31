@@ -110,41 +110,21 @@ function loop(){
 function init(){
 	startGameScreen.classList.add('hidden')
 	hudScreen.classList.remove('hidden')
+	restartGame()
 	generateObstacles()
-
-	player.position.y = 250
-	player.angle = 0
-	player.switchSprite('looking_forward')
-	obstaclesArray.length = 0
-	gameOverScreen.classList.add('hidden')
-	gameOver = false
-	player.isDead = false
-	player.points = 0
-	player_hud_score.innerHTML = 'Score: 0'
-
 	loop()	
 }
 
 function restart(){
-	hudScreen.classList.remove('hidden')
-	generateObstacles()
-
-
-	player.position.y = 250
-	player.angle = 0
-	player.switchSprite('looking_forward')
-	obstaclesArray.length = 0
 	gameOverScreen.classList.add('hidden')
-	gameOver = false
-	player.isDead = false
-	player.points = 0
-	player_hud_score.innerHTML = 'Score: 0'
+	hudScreen.classList.remove('hidden')
+	restartGame()
+	generateObstacles()
 	loop()
 }
 
 function backToMenu(){
-	gameOverScreen.classList.add('hidden')
 	startGameScreen.classList.remove('hidden')
-	obstaclesArray.length = 0
-	player_hud_score.innerHTML = 'Score: 0'
+	gameOverScreen.classList.add('hidden')
+	restartGame()
 }

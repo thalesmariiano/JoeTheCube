@@ -12,9 +12,9 @@ class Acessorie {
     draw(){
         ctx.drawImage(
 			this.sprite.image, 
-			player.position.x - 25, player.position.y - 25, 
-			this.sprite.image.width,
-			this.sprite.image.height
+			player.position.x - 30, player.position.y - 25, 
+			this.sprite.image.width + 8,
+			this.sprite.image.height + 8
 		)
     }
 

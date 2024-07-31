@@ -121,13 +121,13 @@
 					<img class="w-16 h-16" src="./arquivos/images/blank.png">
 				</button>
 			</div>
-			<p class="font-bold text-black text-center text-2xl my-2">Acessórios</p>
+			<p class="font-bold text-black text-center text-2xl my-2">Acessories</p>
 			<div class="w-full h-full bg-neutral-400 flex justify-between items-center rounded p-2 border border-neutral-700">
-				<button class="w-24 h-24 flex flex-col justify-center items-center bg-neutral-500/50 rounded cursor-not-allowed">
-					<img class="w-16 h-16 mt-2" src="./arquivos/images/question_mark.png">
+				<button class="select_acessorie acessorie-container" data-acessorie="Mugiwara">
+					<img src="./arquivos/images/mugiwara_icon.png">
 				</button>
-				<button class="w-24 h-24 flex flex-col justify-center items-center bg-neutral-500/50 rounded cursor-not-allowed">
-					<img class="w-16 h-16 mt-2" src="./arquivos/images/question_mark.png">
+				<button class="select_acessorie acessorie-container" data-acessorie="Headset">
+					<img class="w-14" src="./arquivos/images/headset_icon.png">
 				</button>
 				<button class="w-24 h-24 flex flex-col justify-center items-center bg-neutral-500/50 rounded cursor-not-allowed">
 					<img class="w-16 h-16 mt-2" src="./arquivos/images/question_mark.png">
@@ -151,14 +151,20 @@
 		if(!localStorage.getItem('JTC-skin')){
 			localStorage.setItem('JTC-skin', 'Joe')
 		}
+		if(!localStorage.getItem('JTC-acessorie')){
+			localStorage.setItem('JTC-acessorie', '')
+		}
 		spriteConverter(JTC_skins['joe'])
 		spriteConverter(JTC_skins['mei'])
 		spriteConverter(JTC_skins['cleber'])
 		spriteConverter(JTC_skins['koorb'])
 
+		spriteConverter(JTC_acessories['head'])
+
 		configSkinDisplay()
 	</script>
 
+	<script src="./arquivos/js/Classes/Acessorie.js"></script>
 	<script src="./arquivos/js/Classes/Obstacle.js"></script>
 	<script src="./arquivos/js/Classes/Player.js"></script>
 	<script src="./arquivos/js/uiEvents.js"></script>

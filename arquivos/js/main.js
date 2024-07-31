@@ -31,6 +31,8 @@ const player = new Player({
 		y: 250
 	}
 })
+player.acessorie = new Acessorie(JTC_acessories['head'])
+player.acessorie.switchAcessorie(localStorage.getItem('JTC-acessorie').toLowerCase())
 
 function render(){
 	ctx.clearRect(0, 0, canvas.width, canvas.height)

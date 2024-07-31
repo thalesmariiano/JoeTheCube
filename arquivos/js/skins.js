@@ -56,3 +56,16 @@ const JTC_skins = {
 		}	
 	]
 }
+
+const JTC_acessories = {
+	head: [
+		{	
+			name: 'mugiwara',
+			image: "arquivos/images/acessories/mugiwara.png"
+		},
+		{	
+			name: 'headset',
+			image: 'arquivos/images/acessories/headset.png'
+		}
+	]
+}

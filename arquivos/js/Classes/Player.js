@@ -10,7 +10,8 @@ class Player {
 			x: 0,
 			y: 0
 		}
-		this.sprite = {}
+		this.sprite = null
+		this.acessorie = null
 		this.angle = 0
 		this.points = 0
 		this.isDead = false
@@ -45,7 +46,6 @@ class Player {
 				this.height
 			) 
 		}
-		
 	}
 
 	restart(){
@@ -67,6 +67,11 @@ class Player {
 		ctx.translate(-centerX, -centerY)
 
 		this.draw()
+
+		if(this.acessorie.sprite){
+			this.acessorie.update()
+		}
+
 		ctx.restore()
 
 		if(!this.isDead){

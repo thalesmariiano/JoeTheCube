@@ -6,6 +6,7 @@ const skins_button = document.querySelector('#skins_button')
 const close_skins_modal = document.querySelector('#close_skins_modal')
 const skins_modal = document.querySelector('#skins_modal')
 const select_skin = document.querySelectorAll('.select_skin')
+const select_acessorie = document.querySelectorAll('.select_acessorie')
 
 const restartSinglePlayer = document.querySelector('#restartSinglePlayer')
 const exitFromSinglePlayer = document.querySelector('#exitFromSinglePlayer')
@@ -38,10 +39,28 @@ select_skin.forEach(skinBtn => {
 		skinBtn.classList.add('skin-container-active')
 
 		localStorage.setItem('JTC-skin', skin)
-		player.setSkin(JTC_skins[skin.toLowerCase()])
+		player.setSkin(JTC_skins[localStorage.getItem('JTC-skin').toLowerCase()])
 		configSkinDisplay()
 	})
 	
+})
+
+select_acessorie.forEach(acessorieBtn => {
+	acessorieBtn.addEventListener('click', () => {
+		const acessorie = acessorieBtn.dataset.acessorie
+		const prevAcessorieBtn = Array(...select_acessorie).find(btn => btn.classList.contains("acessorie-container-active"))
+
+		if(prevAcessorieBtn){
+			prevAcessorieBtn.classList.add('acessorie-container')
+			prevAcessorieBtn.classList.remove('acessorie-container-active')
+		}
+		
+		acessorieBtn.classList.remove('acessorie-container')
+		acessorieBtn.classList.add('acessorie-container-active')
+
+		localStorage.setItem('JTC-acessorie', acessorie)
+		player.acessorie.switchAcessorie(localStorage.getItem('JTC-acessorie').toLowerCase())
+	})
 })
 
 restartSinglePlayer.addEventListener('click', () => {

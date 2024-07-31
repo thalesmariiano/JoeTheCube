@@ -554,7 +554,7 @@ video {
   --tw-contain-style:  ;
 }
 
-.skin-container {
+.skin-container, .acessorie-container {
   display: flex;
   height: 6rem;
   width: 6rem;
@@ -573,12 +573,12 @@ video {
   transition-duration: 150ms;
 }
 
-.skin-container:hover {
+.skin-container:hover, .acessorie-container:hover {
   --tw-border-opacity: 1;
   border-color: rgb(34 197 94 / var(--tw-border-opacity));
 }
 
-.skin-container-active {
+.skin-container-active, .acessorie-container-active {
   display: flex;
   height: 6rem;
   width: 6rem;

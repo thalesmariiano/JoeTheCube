@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 @layer components {
-    .skin-container {
+    .skin-container, .acessorie-container {
         @apply w-24 h-24 flex flex-col justify-center items-center bg-neutral-200 pb-2 rounded border border-neutral-500 hover:border-green-500 transition-all
     }
 
-    .skin-container-active {
+    .skin-container-active, .acessorie-container-active {
         @apply w-24 h-24 flex flex-col justify-center items-center bg-neutral-600 pb-2 rounded border-2 text-white border-white shadow-inner cursor-default transition-all
     }
 

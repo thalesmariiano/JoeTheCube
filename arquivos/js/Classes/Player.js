@@ -70,11 +70,11 @@ class Player {
 		ctx.restore()
 
 		if(!this.isDead){
-			if(!getAngle(90)) this.switchSprite('looking_forward')	
+			if(!getAngle(this.angle, 90)) this.switchSprite('looking_forward')	
 			else this.switchSprite('looking_back')
 		}
 
-		if(getAngle(360)){
+		if(getAngle(this.angle, 360)){
 			this.angle = 0
 		}
 

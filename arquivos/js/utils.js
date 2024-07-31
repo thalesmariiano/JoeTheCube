@@ -50,7 +50,7 @@ function generateObstacles(){
 	}, 1100)
 }
 
-const getAngle = angle => Math.abs(player.angle) * Math.PI / 180 >= angle * Math.PI / 180
+const getAngle = (objAngle, angle) => Math.abs(objAngle) * Math.PI / 180 >= angle * Math.PI / 180
 
 function configSkinDisplay(){
 	const skin_name = document.querySelector('#skin_name')

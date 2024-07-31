@@ -79,8 +79,8 @@ class Player {
 			else this.switchSprite('looking_back')
 		}
 
-		if(getAngle(this.angle, 360)){
-			this.angle = 0
+		if(getAngle(this.angle, 340)){
+			this.angle = 20
 		}
 
 		if(this.position.y + this.height < canvas.height){

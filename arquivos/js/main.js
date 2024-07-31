@@ -34,27 +34,7 @@ const player = new Player({
 function render(){
 	ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-	ctx.save()
-
-	const centerX = player.position.x + player.width/2
-	const centerY = player.position.y + player.height/2
-
-	ctx.translate(centerX, centerY)
-	ctx.rotate(player.angle * Math.PI / 180)
-	ctx.translate(-centerX, -centerY)
-
 	player.update()
-
-	if(getAngle(360)){
-		player.angle = 0
-	}
-
-	if(!player.isDead){
-		if(!getAngle(90)) player.switchSprite('looking_forward')	
-		else player.switchSprite('looking_back')
-	}
-	
-	ctx.restore()
 
 	obstaclesArray.forEach(obs => {
 		obs.update()

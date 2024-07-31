@@ -57,7 +57,26 @@ class Player {
 	}
 
 	update(){
+		const centerX = player.position.x + player.width/2
+		const centerY = player.position.y + player.height/2
+
+		ctx.save()
+
+		ctx.translate(centerX, centerY)
+		ctx.rotate(player.angle * Math.PI / 180)
+		ctx.translate(-centerX, -centerY)
+
 		this.draw()
+		ctx.restore()
+
+		if(!this.isDead){
+			if(!getAngle(90)) this.switchSprite('looking_forward')	
+			else this.switchSprite('looking_back')
+		}
+
+		if(getAngle(360)){
+			this.angle = 0
+		}
 
 		if(this.position.y + this.height < canvas.height){
 			this.angle += this.velocity.y				

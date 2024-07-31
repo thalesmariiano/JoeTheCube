@@ -1,6 +1,7 @@
 
 const startGameScreen = document.querySelector('#startGame-Screen')
 const hudScreen = document.querySelector('#hud-screen')
+const pausedScreen = document.querySelector('#paused-screen')
 const gameOverScreen = document.querySelector('#gameOver-Screen')
 const player_hud_score = document.querySelector('#player_hud_score')
 

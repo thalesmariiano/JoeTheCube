@@ -1,10 +1,4 @@
 
-const startGameScreen = document.querySelector('#startGame-Screen')
-const hudScreen = document.querySelector('#hud-screen')
-const pausedScreen = document.querySelector('#paused-screen')
-const gameOverScreen = document.querySelector('#gameOver-Screen')
-const player_hud_score = document.querySelector('#player_hud_score')
-
 const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext('2d')
 ctx.imageSmoothingEnabled = false
@@ -16,7 +10,7 @@ const death_sound = new Audio('./arquivos/sounds/death_sound.wav')
 const pass_obstacle_sound = new Audio('./arquivos/sounds/pass_obstacle.wav')
 
 var timer = 0
-const GRAVITY = 0.2
+var GRAVITY = 0.2
 var gameOver = false
 
 const obstaclesArray = []
@@ -78,8 +72,9 @@ function loop(){
 		clearInterval(timer)
 
 		setTimeout(() => {
-			gameOverScreen.classList.remove('hidden')	
-			hudScreen.classList.add('hidden')
+			showScreen('#death-screen')
+			// gameOverScreen.classList.remove('hidden')	
+			// hudScreen.classList.add('hidden')
 		}, 500)
 	}
 
@@ -91,23 +86,26 @@ function loop(){
 }
 
 function init(){
-	startGameScreen.classList.add('hidden')
-	hudScreen.classList.remove('hidden')
+	showScreen('#hud-screen')
+	// startGameScreen.classList.add('hidden')
+	// hudScreen.classList.remove('hidden')
 	restartGame()
 	generateObstacles()
 	loop()	
 }
 
 function restart(){
-	gameOverScreen.classList.add('hidden')
-	hudScreen.classList.remove('hidden')
+	showScreen('#hud-screen')
+	// gameOverScreen.classList.add('hidden')
+	// hudScreen.classList.remove('hidden')
 	restartGame()
 	generateObstacles()
 	loop()
 }
 
 function backToMenu(){
-	startGameScreen.classList.remove('hidden')
-	gameOverScreen.classList.add('hidden')
+	showScreen('#start-screen')
+	// startGameScreen.classList.remove('hidden')
+	// gameOverScreen.classList.add('hidden')
 	restartGame()
 }

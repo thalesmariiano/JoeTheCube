@@ -1,4 +1,15 @@
 
+function showScreen(id){
+	const screen = document.querySelector(id)
+	const closeScreen = document.querySelector('[data-screen-state=open]')
+
+	screen.classList.remove('hidden')
+	screen.dataset.screenState = "open"
+
+	closeScreen.classList.add('hidden')
+	closeScreen.dataset.screenState = "close"
+}
+
 function spriteConverter(imgArray){
 	if(Array.isArray(imgArray)){
 		imgArray.forEach(spr => {

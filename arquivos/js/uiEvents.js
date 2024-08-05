@@ -1,6 +1,8 @@
 
 const startSinglePlayer = document.querySelector('#startSinglePlayer')
 const options = document.querySelector('#options')
+const backToMenuOptions = document.querySelector('#backToMenuOptions')
+const gravityRange = document.querySelector('#gravity-range')
 
 const skins_button = document.querySelector('#skins_button')
 const close_skins_modal = document.querySelector('#close_skins_modal')
@@ -15,7 +17,13 @@ startSinglePlayer.addEventListener('click', () => {
 	init()
 })
 
-options.addEventListener('click', () => {console.log('options')})
+options.addEventListener('click', () => {
+	showScreen('#options-screen')
+})
+
+backToMenuOptions.addEventListener('click', () => {
+	showScreen('#start-screen')
+})
 
 skins_button.addEventListener('click', () => {
 	skins_modal.classList.remove('hidden')
@@ -62,6 +70,21 @@ select_acessorie.forEach(acessorieBtn => {
 		player.acessorie.switchAcessorie(localStorage.getItem('JTC-acessorie').toLowerCase())
 	})
 })
+
+gravityRange.addEventListener('input', (e) => {
+	const gravityLevelText = document.querySelector('#g-level')
+
+	const dificultyLevel = {
+		'0.1': 'Light',
+		'0.2': 'Normal',
+		'0.3': 'Little Heavy',
+		'0.4': 'Heavy',
+		'0.5': 'Very Heavy'
+	}
+	GRAVITY = parseFloat(e.target.value)
+	gravityLevelText.innerHTML = dificultyLevel[e.target.value]
+})
+
 
 restartSinglePlayer.addEventListener('click', () => {
 	restart()

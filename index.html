@@ -22,7 +22,7 @@
 				O seu navegador não suporta a tag Canvas
 			</canvas>
 
-			<div id="startGame-Screen" class="w-full h-full absolute top-0 left-0 bg-neutral-500 flex justify-center items-center">
+			<div id="start-screen" class="w-full h-full absolute top-0 left-0 bg-neutral-500 flex justify-center items-center" data-screen-state="open">
 
 				<div class="w-full flex justify-center items-center relative">
 					<div class="flex flex-col items-center gap-10">
@@ -31,7 +31,7 @@
 						<div class="flex flex-col justify-center items-center gap-3">
 							<button id="startSinglePlayer" class="w-52 py-1.5 text-black font-semibold bg-neutral-300 hover:bg-neutral-100 transition-all rounded-lg">Singleplayer</button>
 							<button class="w-52 py-1.5 text-black font-semibold bg-neutral-300/50 cursor-not-allowed rounded-lg">Multiplayer</button>
-							<button id="options" class="w-52 py-1.5 text-black font-semibold bg-neutral-300/50 cursor-not-allowed rounded-lg">Options</button>
+							<button id="options" class="w-52 py-1.5 text-black font-semibold bg-neutral-300 hover:bg-neutral-100 transition-all rounded-lg">Options</button>
 						</div>
 					</div>
 
@@ -56,11 +56,32 @@
 				</div>
 			</div>
 
+			<div id="options-screen" class="w-full h-full absolute top-0 left-0 bg-neutral-500 flex justify-center items-center hidden" data-screen-state="close">
+				<div class="flex flex-col items-center gap-12">
+					<h1 class="font-bold text-white text-5xl">Options</h1>
+
+					<div class="space-y-5">
+						<div class="w-96 relative">
+							<p class="mb-2 font-semibold text-lg">Gravity - <span id="g-level" class="text-sm text-neutral-800">Normal</span></p>
+							<input id="gravity-range" class="border border-black rounded-md" type="range" min="0.1" max="0.5" value="0.2" step="0.1">
+						 </div>
+						<div class="w-96 relative">
+							<p class="mb-2 font-semibold text-lg">Velocity - <span class="text-sm text-neutral-800">Normal</span></p>
+							<input id="velocity-range" class="border border-black rounded-md" type="range" min="0.1" max="0.5" value="0.2" step="0.1">
+						 </div>
+					</div>
+
+					<div class="flex flex-col justify-center items-center gap-3">
+						<button id="backToMenuOptions" class="w-52 py-1.5 text-black font-semibold bg-neutral-300 hover:bg-neutral-100 transition-all rounded-lg">Back</button>
+					</div>
+				</div>
+			</div>
+
 			<div id="hud-screen" class="w-full absolute top-0 left-0 p-5 hidden">
 				<span id="player_hud_score" class="font-semibold text-white bg-neutral-700 px-2 select-none rounded">Score: 0</span>	
 			</div>
 
-			<div id="paused-screen" class="w-full h-full absolute top-0 left-0 bg-neutral-900/50 flex justify-center items-center hidden">
+			<div id="paused-screen" class="w-full h-full absolute top-0 left-0 bg-neutral-900/50 flex justify-center items-center hidden" data-screen-state="close">
 				<div class="flex flex-col items-center gap-12">
 					<h1 class="font-bold text-white text-5xl">Paused!</h1>
 
@@ -72,7 +93,7 @@
 				</div>
 			</div>
 
-			<div id="gameOver-Screen" class="w-full h-full absolute top-0 left-0 bg-neutral-900/50 flex justify-center items-center hidden">
+			<div id="death-screen" class="w-full h-full absolute top-0 left-0 bg-neutral-900/50 flex justify-center items-center hidden" data-screen-state="close">
 				<div class="flex flex-col gap-5">
 					<h1 class="font-bold text-white text-5xl">You Lose!</h1>
 
@@ -87,7 +108,6 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
 	</div>
 
